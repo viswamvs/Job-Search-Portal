@@ -1,0 +1,67 @@
+@import "../utilities/variables.scss";
+
+.nav-pagination {
+  margin: 0;
+  padding: 0;
+  padding-top: 40px;
+  .pagination {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    list-style: none;
+    max-width: 100%;
+    li {
+      transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
+        border-color 0.2s ease-in-out;
+      color: $color-primary;
+      background-color: white;
+      padding: 10px;
+      cursor: pointer;
+      margin-right: 20px;
+      border: solid $color-primary 1px;
+      border-radius: 4px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &:hover {
+        background-color: darken(white, 10%);
+      }
+    }
+  }
+}
+
+.page-selected {
+  background-color: $color-highlight !important;
+  color: white !important;
+  border: solid white 1px !important;
+}
+
+@media only screen and (max-width: 650px) {
+  .nav-pagination {
+    .pagination {
+      li {
+        font-size: 0.8rem;
+        padding: 10px;
+      }
+    }
+  }
+  .page-link--arrow-2 {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .nav-pagination {
+    .pagination {
+      li {
+        font-size: 0.8rem;
+        padding: 10px;
+      }
+    }
+  }
+  .page-link--arrow-1 {
+    display: none !important;
+  }
+}

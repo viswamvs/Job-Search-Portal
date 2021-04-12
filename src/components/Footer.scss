@@ -1,0 +1,42 @@
+@import "../utilities/variables.scss";
+
+.footer {
+  background-color: $color-bg-footer;
+  margin-top: 80px;
+  padding: 40px 7.5vw;
+  &__img {
+    margin-bottom: 40px;
+  }
+  &__links {
+    list-style: none;
+    &__contact {
+      color: white !important;
+    }
+    li {
+      a {
+        color: white;
+        cursor: pointer;
+        &:hover {
+          color: darken(white, 20%);
+        }
+      }
+      font-size: 1.25rem;
+      color: white;
+      margin-bottom: 16px;
+      &:hover {
+        color: darken(white, 20%);
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .footer {
+    padding: 40px 10vw;
+    &__links__email {
+      a {
+        font-size: 1.25rem !important;
+      }
+    }
+  }
+}

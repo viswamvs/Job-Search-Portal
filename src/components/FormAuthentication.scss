@@ -1,0 +1,196 @@
+@import "../utilities/variables.scss";
+
+.bg-authentication {
+  background-color: $color-bg-1;
+  width: 100vw;
+  height: 100vh;
+  z-index: -10;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.container-authentication {
+  padding: $container-padding;
+  width: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background-color: white;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+}
+
+.logo-text {
+  margin-bottom: $login-margin;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.btn-authentication {
+  margin-bottom: $login-margin;
+  border-radius: 12px;
+  border: none;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 1rem;
+  font-weight: medium;
+  stroke: white;
+  width: 100%;
+  transition: background-color 0.2s ease-in-out;
+  &--demo {
+    width: 100%;
+    background-color: $color-action;
+    &:hover {
+      cursor: pointer;
+      background-color: darken($color-action, 4%);
+    }
+  }
+  &--log-in {
+    width: 100%;
+    background-color: $color-supplemental;
+    &:hover {
+      cursor: pointer;
+      background-color: darken($color-supplemental, 4%);
+    }
+  }
+  &--sign-up {
+    width: 100%;
+    background-color: $color-action;
+    &:hover {
+      cursor: pointer;
+      background-color: darken($color-action, 4%);
+    }
+  }
+}
+
+.separator-row {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-bottom: $login-margin;
+  &__horizontal-line {
+    border-top: 1px solid #c7ccce;
+    flex: 1 1 auto;
+    margin-top: 8px;
+    min-width: 1px;
+    padding-top: 8px;
+  }
+  &__label {
+    color: $color-placeholder !important;
+    margin: 0 8px;
+  }
+}
+
+form {
+  overflow: visible;
+}
+
+.input {
+  display: block;
+  margin-bottom: $login-margin;
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  border: 1px solid $color-primary;
+  transition: all 0.2s ease-in-out;
+  &:focus {
+    outline: none !important;
+    border: 1px solid $color-action;
+    box-shadow: 0 0 10px $color-bg-1;
+  }
+}
+
+.h1-form {
+  margin-bottom: $login-margin;
+  font-weight: 500;
+  font-size: 1.75rem;
+}
+
+.h2-form {
+  margin-bottom: $login-margin;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.h4-form {
+  margin-bottom: $login-margin;
+  // opacity: 0.5;
+  font-weight: 400;
+  font-size: 0.8rem;
+  text-align: center;
+  animation: none !important;
+  -webkit-animation: none !important;
+  -moz-animation: none !important;
+  -o-animation: none !important;
+  -ms-animation: none !important;
+}
+
+.error-text {
+  margin-bottom: calc(#{$login-margin} / 2);
+  margin-bottom: $login-margin;
+  color: $color-danger;
+  opacity: 0.5;
+  font-weight: 400;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.h5-form {
+  color: $color-placeholder;
+  font-weight: 400;
+  text-align: center;
+  font-size: 0.8rem;
+  animation: none !important;
+  -webkit-animation: none !important;
+  -moz-animation: none !important;
+  -o-animation: none !important;
+  -ms-animation: none !important;
+  &__link {
+    font-size: 0.8rem;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .container-authentication {
+    margin: 0;
+    width: calc(100vw - 2 * #{$container-padding});
+    height: calc(100% - 2 * #{$container-padding});
+    min-height: 600px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(0%);
+  }
+  .logo-text {
+    height: 30px;
+  }
+  input,
+  input::-webkit-input-placeholder {
+    font-size: 0.8rem;
+  }
+  .input,
+  .logo-text,
+  .h1-form,
+  .h4-form,
+  .h5-form {
+    margin-bottom: $login-margin;
+  }
+}
+
+@media only screen and (max-height: 700px) {
+  .bg-authentication {
+    height: 750px;
+  }
+  body {
+    overflow-x: hidden;
+  }
+}

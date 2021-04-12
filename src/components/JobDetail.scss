@@ -1,0 +1,184 @@
+@import "../utilities/variables.scss";
+
+.url {
+  &:hover {
+    color: darken($color-highlight, 10%);
+  }
+}
+.job-detail-bg {
+  background: linear-gradient(180deg, $color-bg-1, $color-bg-2);
+  border-radius: 0 0 42px 42px;
+  transform: translateY(-125px);
+  z-index: 5;
+  padding-top: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__img {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 100px;
+  }
+  &__title {
+    margin-bottom: 40px;
+    color: $color-primary;
+    font-size: 3.5rem;
+    font-weight: 400;
+    text-align: center;
+  }
+  &__company {
+    margin-bottom: 40px;
+    text-align: center;
+    font-weight: 400;
+    a {
+      color: $color-highlight;
+    }
+    &__location {
+      color: $color-secondary;
+    }
+  }
+}
+.job-detail-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  &__left {
+    margin-right: 80px;
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    &__about {
+      width: 350px;
+      border: solid $color-primary 1px;
+      border-radius: 4px;
+      padding: 32px 40px;
+      &__h1 {
+        color: $color-primary;
+        font-size: 1.5rem;
+        margin-bottom: 40px;
+        font-weight: 500;
+      }
+      &__h2 {
+        color: $color-primary;
+        margin-top: 40px;
+        font-size: 0.8rem;
+        font-weight: 400;
+      }
+      &__line {
+        margin: 40px 0;
+      }
+      &__grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-row-gap: 20px;
+        p.key {
+          font-weight: 400;
+          color: $color-primary;
+        }
+      }
+      &__timezones {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        li {
+          margin-right: 20px;
+          background-color: $color-bg-special;
+          border-radius: 8px;
+          padding: 4px 8px;
+          color: $color-action;
+          font-size: 0.75rem;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+  &__right {
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    &__posted-applications {
+      margin-bottom: 20px;
+      color: $color-primary;
+    }
+    &__description {
+      h1 {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 1.5rem;
+        color: $color-primary;
+        font-weight: 400;
+      }
+      h2 {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 1.25rem;
+        color: $color-primary;
+        font-weight: 400;
+      }
+      h3 {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 1rem;
+        color: $color-primary;
+        font-weight: 400;
+      }
+      ul {
+        list-style-position: outside;
+        margin-left: 13px;
+      }
+      ol {
+        list-style-position: outside;
+        margin-left: 13px;
+      }
+      p {
+        strong {
+          font-weight: 500;
+          color: $color-primary;
+          font-size: 1.1rem;
+          margin-top: 20px;
+          margin-bottom: 20px;
+        }
+        margin: 20px 0;
+        font-weight: 400;
+        br {
+          display: block;
+          content: "";
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 1024px) {
+  .job-detail-bg {
+    &__title {
+      text-align: center;
+      font-size: 3rem;
+      width: 80vw;
+    }
+  }
+  .job-detail-info {
+    flex-direction: column;
+    width: 80vw;
+    align-items: center;
+    margin: 0 auto;
+    &__right {
+      margin: 0;
+      order: 1;
+      width: 100%;
+      order: 1;
+      padding: 0;
+    }
+    &__left {
+      margin: 0;
+      width: 100%;
+      order: 2;
+      &__about {
+        margin-top: 40px;
+        width: calc(100% - 80px);
+        align-self: center;
+      }
+    }
+  }
+}

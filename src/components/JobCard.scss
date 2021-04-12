@@ -1,0 +1,123 @@
+@import "../utilities/variables.scss";
+
+.job-card {
+  border: solid #ecedf3 1px;
+  padding: 40px;
+  margin-top: 20px;
+  border-radius: 4px;
+  box-shadow: none;
+  transition: box-shadow 0.2s ease-in-out;
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(64, 70, 104, 0.03),
+      0 10px 15px rgba(64, 70, 104, 0.05);
+  }
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  &__left {
+    display: flex;
+    flex-direction: row;
+    &__img {
+      align-self: center;
+      margin-right: 40px;
+      width: 40px;
+    }
+    &__info {
+      &__title {
+        color: $color-primary;
+        font-weight: 400;
+      }
+      &__details {
+        display: flex;
+        flex-direction: row;
+        margin-top: 20px;
+        align-items: center;
+        &__company {
+          margin-right: 40px;
+          color: $color-primary;
+          font-weight: 500;
+        }
+        &__salary {
+          margin-right: 40px;
+          &__coins {
+            margin-right: 10px;
+          }
+        }
+        &__tags {
+          list-style: none;
+          display: flex;
+          flex-direction: row;
+          li {
+            font-size: 0.75rem;
+            margin-right: 10px;
+            background-color: $color-bg-special;
+            color: $color-action;
+            padding: 4px 8px;
+            border-radius: 8px;
+          }
+        }
+      }
+    }
+  }
+  &__right {
+    &__view {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 10px;
+      font-weight: bold;
+      align-items: center;
+      &__text {
+        margin-right: 10px;
+        color: $color-secondary;
+        transition: color 0.2s ease-in-out;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .job-card {
+    flex-direction: column;
+    &__left {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      &__img {
+        margin: 0;
+        align-self: flex-start;
+      }
+      &__info {
+        &__title {
+          margin-left: 0;
+          align-self: flex-start;
+          margin-top: 20px;
+        }
+        &__details {
+          flex-direction: column;
+          margin-top: 0;
+          &__company {
+            margin-left: 0;
+            margin-top: 20px;
+            align-self: flex-start;
+          }
+          &__salary {
+            align-self: flex-start;
+            margin-top: 20px;
+            display: none;
+          }
+          &__tags {
+            align-self: flex-start;
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+    &__right {
+      &__timestamp {
+        margin-top: 20px;
+        display: none;
+      }
+    }
+  }
+}

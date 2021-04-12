@@ -1,0 +1,44 @@
+@import "../utilities/variables.scss";
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+.likes-bg {
+  background: linear-gradient(180deg, $color-bg-1, $color-bg-2);
+  border-radius: 0 0 42px 42px;
+  transform: translateY(-125px);
+  z-index: 5;
+  padding-top: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__profile {
+    margin-top: 40px;
+    padding: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: $color-highlight;
+    position: relative;
+    margin-bottom: 40px;
+    &__text {
+      font-family: "Roboto", sans-serif !important;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 1.5rem;
+    }
+  }
+  &__h1 {
+    color: $color-primary;
+    font-weight: 400;
+    margin-bottom: 40px;
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .likes-bg {
+    padding-top: 60px;
+  }
+}
